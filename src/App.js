@@ -1,18 +1,11 @@
 import React, { useState, setState } from 'react';
+import Todos from "./data/todos.js"
 
 const App = () => {
 
-	const [title, setTitle] = useState([
-		{ title: 'item 1', isCompleted: true  },
-		{ title: 'item 2', isCompleted: false },
-		{ title: 'item 3', isCompleted: false }
-	]);
-
-	/*
-		Todos.map(function(item){
-			{title: {item.title} isCompleted: {item.isCompleted}}
-		})
-	*/
+	const [title, setTitle] = useState(
+		Todos
+	);
 
 const addTodo = (inputTitle) => {
 	setTitle([...title, {title: inputTitle, isCompleted: false}]);
@@ -29,6 +22,14 @@ const handleSubmit  = (e) => {
 const deleteTodo = (itemID) => {
 	title.splice(itemID, 1);
 	
+	inputSetTitle(' ');
+	setTimeout(function(){
+		inputSetTitle('');
+	}, 1)
+};
+
+const handleChecked = (itemID) => {
+	title[itemID].isCompleted = !title[itemID].isCompleted;
 	inputSetTitle(' ');
 	setTimeout(function(){
 		inputSetTitle('');
@@ -53,7 +54,7 @@ const deleteTodo = (itemID) => {
 					<li key={itemID}>
 						<div>
 							{item.title}
-							<input type="checkbox" checked={item.isCompleted}></input>
+							<input type="checkbox" checked={item.isCompleted} onChange={() => handleChecked(itemID)}></input>
 							<button onClick={() => deleteTodo(itemID)}>x</button>
 						</div>
 					</li>
