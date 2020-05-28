@@ -14,7 +14,11 @@ const App = () => {
 				{Todos.map(function(item, itemID){
 					return (
 					<li key={itemID}>
-						{item.title}
+						<div>
+							{item.title}
+							<input type="checkbox" checked={item.isCompleted}>
+							</input>
+						</div>
 					</li>
 					)
 				})}
