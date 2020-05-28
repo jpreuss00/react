@@ -1,6 +1,8 @@
 import React, { useState, setState } from 'react';
 import Todos from "./data/todos.js"
 
+import "./app.css"
+
 const App = () => {
 
 	const [title, setTitle] = useState(
@@ -39,23 +41,21 @@ const handleChecked = (itemID) => {
 	return (
 		<div>
 
-			<h1>Todoooooooo app</h1>
-
-			<h3>Was ich machen werde wenn die Kontaktsperre aufgehoben wird:</h3>
+			<h1>To-Do</h1>
 			
-			<form onSubmit={handleSubmit}>
-				<input type="text" value={inputTitle} required onChange={(e) => inputSetTitle(e.target.value)}></input>
-				<input type="submit" value="Add a new Tod"></input>
+			<form class="submit" onSubmit={handleSubmit}>
+				<input class="submit__field" type="text" value={inputTitle} required onChange={(e) => inputSetTitle(e.target.value)}></input>
+				<input class="submit__button" type="submit" value="Add a new To-Do"></input>
 			</form>
 
-			<ul>
+			<ul class="list">
 				{title.map(function(item, itemID){
 					return (
-					<li key={itemID}>
+					<li class="list__items" key={itemID}>
 						<div>
 							{item.title}
-							<input type="checkbox" checked={item.isCompleted} onChange={() => handleChecked(itemID)}></input>
-							<button onClick={() => deleteTodo(itemID)}>x</button>
+							<input class="list__items__checkbox" type="checkbox" checked={item.isCompleted} onChange={() => handleChecked(itemID)}></input>
+							<button class="list__items__button" onClick={() => deleteTodo(itemID)}></button>
 						</div>
 					</li>
 					)

@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background: url(https://image.freepik.com/vektoren-kostenlos/farbverlauf-aquarell-fleck-hintergrund_23-2148184546.jpg);
+    background-size: cover;
+    color:rgb(87, 145, 132);
+}
+
+h1{
+    border: solid black 3px;
+    background-color: grey;
+    padding: 10px;
+    margin: 25px auto;
+    width: 50%;
+    border-radius: 15px;
+}
+
+.submit{
+    border: solid black 1px;
+    width: 75%;
+    margin: 100px auto;
+}
+
+.submit__field{
+    padding: 10px;
+    margin: 10px;
+    height: 25px;
+}
+
+.submit__button{
+    padding: 10px;
+    margin: 10px;
+    height: 45px;
+    cursor: pointer;
+}
+
+.list{
+    width: 75%;
+    margin: 0 auto;
+    border: solid black 1px;
+    list-style: none;
+    padding: 15px 0;
+}
+
+.list__items{
+    margin: 15px 3px;
+    border: dotted black 1px;
+    padding: 5px;
+    min-height: 30px;
+}
+
+.list__items__checkbox{
+    cursor: pointer;
+    margin: 10px;
+}
+
+.list__items__button{
+    background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Red_X_Freehand.svg/1200px-Red_X_Freehand.svg.png);
+    background-size: cover;
+    width: 25px;
+    height: 25px;
+    border: none;
+    float: right;
+    margin-top: 5px;
+    cursor: pointer;
+}
