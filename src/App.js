@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, setState } from 'react';
 
 const App = () => {
 
@@ -19,10 +19,20 @@ const addTodo = (inputTitle) => {
 }
 
 const [inputTitle, inputSetTitle] = useState('');
+
 const handleSubmit  = (e) => {
 	e.preventDefault();
 	addTodo(inputTitle);
 	inputSetTitle('');
+}
+
+const deleteTodo = (itemID) => {
+	title.splice(itemID, 1);
+	
+	inputSetTitle(' ');
+	setTimeout(function(){
+		inputSetTitle('');
+	}, 1)
 }
 
 	return (
@@ -43,8 +53,8 @@ const handleSubmit  = (e) => {
 					<li key={itemID}>
 						<div>
 							{item.title}
-							<input type="checkbox" checked={item.isCompleted}>
-							</input>
+							<input type="checkbox" checked={item.isCompleted}></input>
+							<button onClick={() => deleteTodo(itemID)}>x</button>
 						</div>
 					</li>
 					)
