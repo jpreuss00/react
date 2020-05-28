@@ -43,19 +43,19 @@ const handleChecked = (itemID) => {
 
 			<h1>To-Do</h1>
 			
-			<form class="submit" onSubmit={handleSubmit}>
-				<input class="submit__field" type="text" value={inputTitle} required onChange={(e) => inputSetTitle(e.target.value)}></input>
-				<input class="submit__button" type="submit" value="Add a new To-Do"></input>
+			<form className="submit" onSubmit={handleSubmit}>
+				<input className="submit__field" type="text" value={inputTitle} required onChange={(e) => inputSetTitle(e.target.value)}></input>
+				<input className="submit__button" type="submit" value="Add a new To-Do"></input>
 			</form>
 
-			<ul class="list">
+			<ul className="list">
 				{title.map(function(item, itemID){
 					return (
-					<li class="list__items" key={itemID}>
+					<li className="list__items" key={itemID}>
 						<div>
 							{item.title}
-							<input class="list__items__checkbox" type="checkbox" checked={item.isCompleted} onChange={() => handleChecked(itemID)}></input>
-							<button class="list__items__button" onClick={() => deleteTodo(itemID)}></button>
+							<input className="list__items__checkbox" type="checkbox" checked={item.isCompleted} onChange={() => handleChecked(itemID)}></input>
+							<button className="list__items__button" onClick={() => deleteTodo(itemID)}></button>
 						</div>
 					</li>
 					)
