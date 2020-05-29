@@ -1,9 +1,13 @@
 {
+  "homepage": "http://jpreuss00.github.io/react",
   "name": "react-todooooooo",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pahes -d build",
+    "build": "react-scripts build",
     "start": "webpack-dev-server --config ./webpack.config.js --mode development",
     "test": "echo \"No test specified\" && exit 0"
   },
@@ -16,6 +20,7 @@
     "@babel/preset-react": "^7.9.4",
     "babel-loader": "^8.1.0",
     "css-loader": "^3.5.3",
+    "gh-pages": "^2.2.0",
     "react-hot-loader": "^4.12.21",
     "style-loader": "^1.2.1",
     "webpack": "^4.43.0",
